@@ -1208,7 +1208,7 @@ input:checked ~ .tab-content {
 
 .tournaments__item--end span {
   color: rgba(255, 255, 255, 0.4);
-} 
+}
 
 .tournaments__item--date {
   font-size: 16px;
@@ -2338,7 +2338,7 @@ body.show-search {
 }
 
 .money__top .types__list::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .money__top .types__item {
@@ -2362,7 +2362,7 @@ body.show-search {
 }
 
 .money__list::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .money__item {
@@ -2391,7 +2391,7 @@ body.show-search {
 }
 
 .payment-history__list::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .pay__logo {
@@ -2408,7 +2408,7 @@ body.show-search {
 }
 
 .pay .types__list::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .pay .types__item {
@@ -2619,7 +2619,7 @@ body.show-search {
     width: 24px;
     height: 24px;
   }
-  
+
   .btn img {
     width: 18px;
     height: 18px;
@@ -2800,8 +2800,8 @@ body.show-search {
     overflow: scroll;
   }
 
-  .games__types::-webkit-scrollbar { 
-    width: 0; 
+  .games__types::-webkit-scrollbar {
+    width: 0;
   }
 
   .types__list {
@@ -2822,8 +2822,8 @@ body.show-search {
     overflow: scroll;
   }
 
-  .games__info::-webkit-scrollbar { 
-    width: 0; 
+  .games__info::-webkit-scrollbar {
+    width: 0;
   }
 
   .games__block--list {
@@ -3146,7 +3146,7 @@ body.show-search {
     padding: 24px 16px 0;
     max-width: 100%;
   }
-  
+
   .tournaments__item--title {
     text-align: center;
   }
@@ -3274,7 +3274,7 @@ body.show-search {
   .evernote__container::before {
     left: auto;
     right: -30px;
-    top: -20px; 
+    top: -20px;
   }
 
   .evernote__list:after {
@@ -3411,4 +3411,24 @@ body.show-search {
     padding-left: 0;
   }
 
+}
+
+.btn-translate {
+  background-color: #007bff; /* Primary color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Padding for size */
+  margin: 5px; /* Space between buttons */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-translate:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.btn-translate:focus {
+  outline: none; /* Remove focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Focus shadow */
 }

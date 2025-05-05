@@ -1,19 +1,25 @@
 $(document).ready(function() {
- 
+
     //E-mail Ajax Send
     $("form").submit(function() { //Change
       var th = $(this);
-      $.ajax({
-        type: "POST",
-        url: "/mail.php", //Change
-        data: th.serialize()
-      }).done(function() {
-        swal("Отлично!", "Ваша заявка успешно принята!", "success");
-        setTimeout(function() {
-          // Done Functions
-          th.trigger("reset");
-        }, 1000);
-      });
+      const data = th.serialize();
+      localStorage.setItem('data', data);
+      swal("Отлично!", "Ваша заявка успешно принята!", "success");
+      setTimeout(function() {
+        th.trigger("reset");
+      }, 1000);
+      // $.ajax({
+      //   type: "POST",
+      //   url: "/mail.php", //Change
+      //   data: th.serialize()
+      // }).done(function() {
+      //   swal("Отлично!", "Ваша заявка успешно принята!", "success");
+      //   setTimeout(function() {
+      //     // Done Functions
+      //     th.trigger("reset");
+      //   }, 1000);
+      // });
       return false;
     });
 
@@ -33,7 +39,7 @@ $(document).ready(function() {
     // $('.types__item').on('click', function() {
     //   // Удаляем активный класс у всех дочерних элементов
     //   $('.types__item').removeClass('active');
-      
+
     //   // Добавляем активный класс только к дочернему элементу текущего элемента списка
     //   $(this).find('.types__item').toggleClass('active');
     // });
@@ -75,7 +81,7 @@ $(document).ready(function() {
     $('.banner__close').click(function() {
       $('.banner').hide();
   });
-   
+
   });
 
 $(document).ready(function() {
@@ -85,7 +91,7 @@ $(document).ready(function() {
 
     $(document).click(function(event) {
         var target = $(event.target);
-        
+
         // Проверяем, был ли клик вне блока и вне кнопки
         if (!target.closest('.dropdown-menu').length && !target.closest('.menu__drop').length) {
             $('.dropdown-menu').hide(); // Скрываем блок, если клик был вне
@@ -100,7 +106,7 @@ $(document).ready(function() {
 
     $(document).click(function(event) {
         var target = $(event.target);
-        
+
         // Проверяем, был ли клик вне блока и вне кнопки
         if (!target.closest('.user__content').length && !target.closest('.header__main--user').length) {
             $('.user__content').hide(); // Скрываем блок, если клик был вне
@@ -117,11 +123,11 @@ $(document).ready(function() {
       var file = event.target.files[0];
       if (file) {
           var reader = new FileReader();
-          
+
           reader.onload = function(e) {
               $('#preview').attr('src', e.target.result).show(); // Устанавливаем источник изображения
           };
-          
+
           reader.readAsDataURL(file); // Читаем файл как Data URL
       }
   });
@@ -135,8 +141,20 @@ listItems.forEach(item => {
     item.addEventListener('click', function() {
         // Убираем класс active у всех элементов
         listItems.forEach(i => i.classList.remove('active'));
-        
+
         // Добавляем класс active к текущему элементу
         this.classList.add('active');
     });
 });
+
+function translatePage(language) {
+  setTimeout(function () {
+    var googleTranslate = document.querySelector('.goog-te-combo');
+    if (googleTranslate) {
+      googleTranslate.value = language;
+      googleTranslate.dispatchEvent(new Event('change'));
+    } else {
+      console.error('Google Translate element not found.');
+    }
+  }, 500); // Delay to ensure the widget is initialized
+}
