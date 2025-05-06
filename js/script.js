@@ -232,31 +232,54 @@ const persistBtns = () => {
 };
 
 function translatePage(lang) {
-  const elements = document.querySelectorAll(
-    "p, h1, h2, h3, h4, h5, h6, span, a, button, label"
+  // Показываем индикатор загрузки
+  $("body").append(
+    '<div id="translation-loader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.9); z-index: 9999; display: flex; justify-content: center; align-items: center;"><div>Перевод...</div></div>'
   );
 
-  // Сохраняем выбранный язык
+  // Скрываем основной контент
+  $("body > *:not(#translation-loader)").hide();
+
+  const elements = Array.from(
+    document.querySelectorAll(
+      "p, h1, h2, h3, h4, h5, h6, span, a, button, label"
+    )
+  );
+
   localStorage.setItem("selectedLanguage", lang);
 
-  elements.forEach((element) => {
+  const promises = elements.map((element) => {
     if (element.textContent.trim()) {
       const text = element.textContent;
       const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${lang}&dt=t&q=${encodeURIComponent(
         text
       )}`;
 
-      fetch(url)
+      return fetch(url)
         .then((response) => response.json())
         .then((data) => {
           if (data && data[0] && data[0][0] && data[0][0][0]) {
             element.textContent = data[0][0][0];
           }
-          persistBtns();
-        })
-        .catch((error) => console.error("Translation error:", error));
+        });
     }
+    return Promise.resolve();
   });
+
+  // Ждем завершения всех переводов
+  Promise.all(promises)
+    .then(() => {
+      // Скрываем индикатор загрузки
+      $("#translation-loader").remove();
+      // Показываем контент
+      $("body > *:not(#translation-loader)").show();
+      persistBtns();
+    })
+    .catch((error) => {
+      console.error("Translation error:", error);
+      $("#translation-loader").remove();
+      $("body > *:not(#translation-loader)").show();
+    });
 }
 
 // Применяем сохраненный язык при загрузке страницы
