@@ -38,7 +38,11 @@ const setLogout = () => {
 
 const checkLogin = () => {
   const isLogin = localStorage.getItem("isLogin");
-  if (isLogin && window.location.pathname === "/index.html") {
+  if (
+    isLogin &&
+    (window.location.pathname === "/index.html" ||
+      window.location.pathname === "/")
+  ) {
     goToLogin();
   }
 };

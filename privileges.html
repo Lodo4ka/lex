@@ -49,17 +49,30 @@
             </div>
             <div class="header__actions">
               <div class="header__actions--left">
-                <div class="header__stars">
+                <div
+                  class="header__stars"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal7"
+                >
                   <img src="img/icons/stars.svg" alt="stars" />
                   <span>120</span>
                 </div>
                 <div class="divider"></div>
-                <div class="header__wallet">
+                <div
+                  class="header__wallet"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal5"
+                >
                   <img src="img/icons/wallet-header.svg" alt="wallet" />
                   <span>₽ 49 968</span>
                 </div>
               </div>
-              <button type="button" class="btn btn-primary desktop">
+              <button
+                type="button"
+                class="btn btn-primary desktop"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal6"
+              >
                 MAKE DEPOSIT
               </button>
             </div>
@@ -396,6 +409,551 @@
                   Already have account? <a href="#">Sign In</a>
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Wallet-->
+      <div
+        class="modal wallet fade"
+        id="exampleModal5"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Wallet</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="wallet">
+                <div class="wallet__balance">
+                  <span>Wallet Balance</span>
+                  ₽ 49 968
+                </div>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="history-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#history"
+                      type="button"
+                      role="tab"
+                      aria-controls="history"
+                      aria-selected="true"
+                    >
+                      History
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="deposit-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#deposit"
+                      type="button"
+                      role="tab"
+                      aria-controls="deposit"
+                      aria-selected="false"
+                    >
+                      Deposit
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="withdrow-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#withdrow"
+                      type="button"
+                      role="tab"
+                      aria-controls="withdrow"
+                      aria-selected="false"
+                    >
+                      Withdrow
+                    </button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="history"
+                    role="tabpanel"
+                    aria-labelledby="history-tab"
+                  >
+                    <div class="payment-history">
+                      <div class="payment-history__top">
+                        <div class="payment-history__title">
+                          Payment History
+                        </div>
+                        <button class="payment-history__clear">
+                          Clear History
+                        </button>
+                      </div>
+                      <div class="payment-history__list">
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Win</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right">
+                            +$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Deposite</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right">
+                            +$200.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Withdrow</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right minus">
+                            -$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Withdrow</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right minus">
+                            -$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Withdrow</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right minus">
+                            -$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Withdrow</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right minus">
+                            -$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Withdrow</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right minus">
+                            -$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="deposit"
+                    role="tabpanel"
+                    aria-labelledby="deposit-tab"
+                  >
+                    <div class="banner">
+                      <div class="banner__left">
+                        <div class="banner__title">
+                          Exchange Your Extra Points
+                        </div>
+                        <a href="#" class="banner__start">
+                          Start to Explore
+                          <img src="img/icons/right.svg" alt="right" />
+                        </a>
+                      </div>
+                      <div class="banner__right">
+                        <div class="banner__close">
+                          <img src="img/icons/close.svg" alt="close" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="money">
+                      <div class="money__top">
+                        <div class="types__list">
+                          <button class="types__item btn active">RUB</button>
+                          <button class="types__item btn">USDT</button>
+                          <button class="types__item btn">
+                            ALL CRYPTOCURRENCY
+                          </button>
+                          <button class="types__item btn">CREDIT CARD</button>
+                          <button class="types__item btn">CREDIT CARD</button>
+                        </div>
+                      </div>
+                      <div class="money__list">
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            RUB
+                            <img src="img/images/card.png" alt="card" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            RUB#2
+                            <img src="img/images/sbp.png" alt="sbp" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            Bitcoin
+                            <img src="img/images/bitcoin.png" alt="bitcoin" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            TRON
+                            <img src="img/images/tron.png" alt="tron" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            Etherium
+                            <img src="img/images/etherium.png" alt="etherium" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            USDT TRC20
+                            <img src="img/images/thether.png" alt="thether" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="withdrow"
+                    role="tabpanel"
+                    aria-labelledby="withdrow-tab"
+                  >
+                    <div class="banner banner-withdrow">
+                      <div class="banner__left">
+                        <div class="banner__title">
+                          Exchange Your Extra Points
+                        </div>
+                        <a href="#" class="banner__start">
+                          Start to Explore
+                          <img src="img/icons/right.svg" alt="right" />
+                        </a>
+                      </div>
+                      <div class="banner__right">
+                        <div class="banner__close">
+                          <img src="img/icons/close.svg" alt="close" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="money">
+                      <div class="money__top">
+                        <div class="types__list">
+                          <button class="types__item btn active">
+                            CREDIT CARD
+                          </button>
+                          <button class="types__item btn">USDT</button>
+                          <button class="types__item btn">BANK ACCOUNT</button>
+                          <button class="types__item btn">
+                            ALL CRYPTOCURRENCY
+                          </button>
+                        </div>
+                      </div>
+                      <div class="money__list">
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">VISA</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">Mastercard</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">MIR</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">SBERBANK</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">ALFA-BANK</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">VTB</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Deposit-->
+      <div
+        class="modal pay fade"
+        id="exampleModal6"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                class="modal-header__back"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/back.svg" alt="back" />
+              </button>
+              <h5 class="modal-title" id="exampleModalLabel">Deposit</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form uniForm" method="post" id="contact-form">
+                <div class="pay">
+                  <div class="pay__logo">
+                    <img src="img/images/thether-2.png" alt="thether" />
+                  </div>
+                  <div class="form__row">
+                    <div class="form__label">Deposite</div>
+                    <div class="form__input">
+                      <input
+                        type="text"
+                        id="deposite"
+                        name="deposite"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="types__list">
+                    <button class="types__item btn active">1000</button>
+                    <button class="types__item btn">2000</button>
+                    <button class="types__item btn">5000</button>
+                    <button class="types__item btn">10 000</button>
+                    <button class="types__item btn">20 000</button>
+                    <button class="types__item btn">50 000</button>
+                    <button class="types__item btn">100 000</button>
+                  </div>
+                </div>
+                <div class="secure">
+                  <span>Secure payment by:</span>
+                  <div class="secure__list">
+                    <a href="#">
+                      <img src="img/images/pay-1.png" alt="pay" />
+                    </a>
+                    <a href="#">
+                      <img src="img/images/pay-2.png" alt="pay" />
+                    </a>
+                  </div>
+                </div>
+                <div class="modal__actions">
+                  <button class="scroll-to btn" type="submit">
+                    Pay 2,500₽
+                  </button>
+                  <button
+                    class="scroll-to btn btn-secondary"
+                    type="submit"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Exchange-->
+      <div
+        class="modal exchange fade"
+        id="exampleModal7"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                class="modal-header__back"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/back.svg" alt="back" />
+              </button>
+              <h5 class="modal-title" id="exampleModalLabel">Exchange</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="exchange__content">
+                <div class="exchange__title">Exchange Points</div>
+                <div class="exchange__number">
+                  <img src="img/icons/stars.svg" alt="stars" />
+                  120
+                </div>
+                <div class="exchange__desc">
+                  Each new level unlocks even more opportunities to enjoy
+                  exclusive bonuses and perks
+                </div>
+                <div class="exchange__list">
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Begginer (100%)</div>
+                        <div class="exchange__item--deposit">
+                          No Deposit 8:1
+                        </div>
+                      </div>
+                      <div class="progressbar"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-2.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Novice (25%)</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-3.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Novice</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-4.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Specialist</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-5.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Specialist</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

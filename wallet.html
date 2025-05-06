@@ -142,7 +142,12 @@
                   <span>₽ 49 968</span>
                 </div>
               </div>
-              <button type="button" class="btn btn-primary desktop">
+              <button
+                type="button"
+                class="btn btn-primary desktop"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal6"
+              >
                 MAKE DEPOSIT
               </button>
             </div>
@@ -1057,6 +1062,217 @@
                     aria-labelledby="withdrow-tab"
                   >
                     ...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Deposit-->
+      <div
+        class="modal pay fade"
+        id="exampleModal6"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                class="modal-header__back"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/back.svg" alt="back" />
+              </button>
+              <h5 class="modal-title" id="exampleModalLabel">Deposit</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form uniForm" method="post" id="contact-form">
+                <div class="pay">
+                  <div class="pay__logo">
+                    <img src="img/images/thether-2.png" alt="thether" />
+                  </div>
+                  <div class="form__row">
+                    <div class="form__label">Deposite</div>
+                    <div class="form__input">
+                      <input
+                        type="text"
+                        id="deposite"
+                        name="deposite"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="types__list">
+                    <button class="types__item btn active">1000</button>
+                    <button class="types__item btn">2000</button>
+                    <button class="types__item btn">5000</button>
+                    <button class="types__item btn">10 000</button>
+                    <button class="types__item btn">20 000</button>
+                    <button class="types__item btn">50 000</button>
+                    <button class="types__item btn">100 000</button>
+                  </div>
+                </div>
+                <div class="secure">
+                  <span>Secure payment by:</span>
+                  <div class="secure__list">
+                    <a href="#">
+                      <img src="img/images/pay-1.png" alt="pay" />
+                    </a>
+                    <a href="#">
+                      <img src="img/images/pay-2.png" alt="pay" />
+                    </a>
+                  </div>
+                </div>
+                <div class="modal__actions">
+                  <button class="scroll-to btn" type="submit">
+                    Pay 2,500₽
+                  </button>
+                  <button
+                    class="scroll-to btn btn-secondary"
+                    type="submit"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Exchange-->
+      <div
+        class="modal exchange fade"
+        id="exampleModal7"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                class="modal-header__back"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/back.svg" alt="back" />
+              </button>
+              <h5 class="modal-title" id="exampleModalLabel">Exchange</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="exchange__content">
+                <div class="exchange__title">Exchange Points</div>
+                <div class="exchange__number">
+                  <img src="img/icons/stars.svg" alt="stars" />
+                  120
+                </div>
+                <div class="exchange__desc">
+                  Each new level unlocks even more opportunities to enjoy
+                  exclusive bonuses and perks
+                </div>
+                <div class="exchange__list">
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Begginer (100%)</div>
+                        <div class="exchange__item--deposit">
+                          No Deposit 8:1
+                        </div>
+                      </div>
+                      <div class="progressbar"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-2.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Novice (25%)</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-3.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Novice</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-4.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Specialist</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-5.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Specialist</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
                   </div>
                 </div>
               </div>
