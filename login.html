@@ -1,1380 +1,1457 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <title>LEX - Auth</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-	<title>LEX - Auth</title>
-	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
-	<link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/style.css">
-</head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <div class="header__row">
+            <div class="header__main">
+              <div class="header__main--left">
+                <a href="index.html" class="header__logo">
+                  <img src="img/icons/logo.svg" alt="logo" />
+                </a>
+              </div>
+              <div class="header__main--user">
+                <div class="avatar">
+                  <img src="img/images/avatar.png" alt="avatar" />
+                </div>
+                <div class="user__info">
+                  <span>Begginer (0%)</span>
+                  Verylong User Name
+                </div>
+                <div class="user__content desktop">
+                  <div class="user__content--top">
+                    <div class="user__content--header">
+                      <a href="#" class="user__content--back">
+                        <img src="img/icons/back.svg" alt="back" />
+                      </a>
+                      <div class="user__content--title">Profile</div>
+                      <button class="close">
+                        <img src="img/icons/close.svg" alt="close" />
+                      </button>
+                    </div>
+                    <div class="user__content--info">
+                      <div class="avatar">
+                        <img src="img/images/avatar.png" alt="avatar" />
+                      </div>
+                      <div class="user">Hi, Username!</div>
+                      <div class="user__content--skills">
+                        <div class="skills__item">
+                          Points:
+                          <img src="img/icons/stars.svg" alt="stars" />
+                          120
+                        </div>
+                        <div class="skills__item">Balance: ₽ 49 968</div>
+                      </div>
+                      <div class="user__content--progress">
+                        <div class="progressbar"></div>
+                        <div class="progress__info">
+                          Begginer (0%)
+                          <a href="#">More Info</a>
+                        </div>
+                      </div>
+                      <div class="user__content--menu">
+                        <button
+                          class="user__content--item"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal3"
+                        >
+                          <div class="user__content--left">
+                            <div class="user__content--icon">
+                              <img src="img/icons/profile.svg" alt="profile" />
+                            </div>
+                            <div class="user__content--info">
+                              Personal info
+                              <span>Name, email, other information</span>
+                            </div>
+                          </div>
+                          <div class="user__content--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </button>
+                        <a href="#" class="user__content--item">
+                          <div class="user__content--left">
+                            <div class="user__content--icon">
+                              <img
+                                src="img/icons/settings.svg"
+                                alt="settings"
+                              />
+                            </div>
+                            <div class="user__content--info">
+                              Settings
+                              <span
+                                >Set up subscriptions and notifications</span
+                              >
+                            </div>
+                          </div>
+                          <div class="user__content--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="user__content--bottom">
+                    <button
+                      class="user__content--btn btn btn-secondary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal4"
+                    >
+                      Log Out
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="header__actions">
+              <div class="header__actions--left">
+                <div
+                  class="header__stars"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal7"
+                >
+                  <img src="img/icons/stars.svg" alt="stars" />
+                  <span>120</span>
+                </div>
+                <div class="divider"></div>
+                <div
+                  class="header__wallet"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal5"
+                >
+                  <img src="img/icons/wallet-header.svg" alt="wallet" />
+                  <span>₽ 49 968</span>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-primary desktop"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal6"
+              >
+                MAKE DEPOSIT
+              </button>
+            </div>
+            <button type="button" class="btn mobile">
+              <img src="img/icons/menu.svg" alt="menu" />
+            </button>
+          </div>
+        </div>
+      </header>
 
-<body>
-	<div class="wrapper">
-		<header class="header">
-			<div class="header__container">
-				<div class="header__row">
-					<div class="header__main">
-						<div class="header__main--left">
-							<a href="index.html" class="header__logo">
-								<img src="img/icons/logo.svg" alt="logo">
-							</a>
-						</div>
-						<div class="header__main--user">
-							<div class="avatar">
-								<img src="img/images/avatar.png" alt="avatar">
-							</div>
-							<div class="user__info">
-								<span>Begginer (0%)</span>
-								Verylong User Name
-							</div>
-							<div class="user__content desktop">
-								<div class="user__content--top">
-									<div class="user__content--header">
-										<a href="#" class="user__content--back">
-											<img src="img/icons/back.svg" alt="back">
-										</a>
-										<div class="user__content--title">
-											Profile
-										</div>
-										<button class="close">
-											<img src="img/icons/close.svg" alt="close">
-										</button>
-									</div>
-									<div class="user__content--info">
-										<div class="avatar">
-											<img src="img/images/avatar.png" alt="avatar">
-										</div>
-										<div class="user">
-											Hi, Username!
-										</div>
-										<div class="user__content--skills">
-											<div class="skills__item">
-												Points:
-												<img src="img/icons/stars.svg" alt="stars">
-												120
-											</div>
-											<div class="skills__item">
-												Balance: ₽ 49 968
-											</div>
-										</div>
-										<div class="user__content--progress">
-											<div class="progressbar"></div>
-											<div class="progress__info">
-												Begginer (0%)
-												<a href="#">More Info</a>
-											</div>
-										</div>
-										<div class="user__content--menu">
-											<button class="user__content--item" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-												<div class="user__content--left">
-													<div class="user__content--icon">
-														<img src="img/icons/profile.svg" alt="profile">
-													</div>
-													<div class="user__content--info">
-														Personal info
-														<span>Name, email, other information</span>
-													</div>
-												</div>
-												<div class="user__content--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</button>
-											<a href="#" class="user__content--item">
-												<div class="user__content--left">
-													<div class="user__content--icon">
-														<img src="img/icons/settings.svg" alt="settings">
-													</div>
-													<div class="user__content--info">
-														Settings
-														<span>Set up subscriptions and notifications</span>
-													</div>
-												</div>
-												<div class="user__content--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="user__content--bottom">
-									<button class="user__content--btn btn btn-secondary" data-bs-toggle="modal"
-										data-bs-target="#exampleModal4">
-										Log Out
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="header__actions">
-						<div class="header__actions--left">
-							<div class="header__stars" data-bs-toggle="modal" data-bs-target="#exampleModal7">
-								<img src="img/icons/stars.svg" alt="stars">
-								<span>120</span>
-							</div>
-							<div class="divider"></div>
-							<div class="header__wallet" data-bs-toggle="modal" data-bs-target="#exampleModal5">
-								<img src="img/icons/wallet-header.svg" alt="wallet">
-								<span>₽ 49 968</span>
-							</div>
-						</div>
-						<button type="button" class="btn btn-primary desktop" data-bs-toggle="modal"
-							data-bs-target="#exampleModal6">
-							MAKE DEPOSIT
-						</button>
-					</div>
-					<button type="button" class="btn mobile">
-						<img src="img/icons/menu.svg" alt="menu">
-					</button>
-				</div>
-			</div>
-		</header>
+      <div class="menu">
+        <div class="menu__container">
+          <div class="menu__content">
+            <div class="menu__left">
+              <div class="menu__list">
+                <a href="index.html" class="menu__item active"> GAME HALL </a>
+                <a href="tournaments.html" class="menu__item"> TOURNAMENT </a>
+                <a href="privileges.html" class="menu__item"> Privileges </a>
+                <a href="faq.html" class="menu__item"> FAQ </a>
+                <a href="top5.html" class="menu__item"> TOP 5 WINNERS </a>
+              </div>
+              <div class="more">
+                <button class="menu__drop">
+                  <img src="img/icons/down.svg" alt="down" />
+                </button>
+                <div class="dropdown-menu">
+                  <a href="mobile.html" class="menu__item">MOBILE APP</a>
+                  <a href="politics.html" class="menu__item">RULES</a>
+                  <a href="about.html" class="menu__item">ABOUT US</a>
+                  <a href="antiblock.html" class="menu__item">ANTIBLOCK</a>
+                  <a href="contact.html" class="menu__item">CONTACT</a>
+                </div>
+              </div>
+            </div>
+            <div class="menu__right">
+              <button class="search">
+                <img src="img/icons/search.svg" alt="search" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		<div class="menu">
-			<div class="menu__container">
-				<div class="menu__content">
-					<div class="menu__left">
-						<div class="menu__list">
-							<a href="index.html" class="menu__item active">
-								GAME HALL
-							</a>
-							<a href="tournaments.html" class="menu__item">
-								TOURNAMENT
-							</a>
-							<a href="privileges.html" class="menu__item">
-								Privileges
-							</a>
-							<a href="faq.html" class="menu__item">
-								FAQ
-							</a>
-							<a href="top5.html" class="menu__item">
-								TOP 5 WINNERS
-							</a>
-						</div>
-						<div class="more">
-							<button class="menu__drop">
-								<img src="img/icons/down.svg" alt="down">
-							</button>
-							<div class="dropdown-menu">
-								<a href="mobile.html" class="menu__item">MOBILE APP</a>
-								<a href="politics.html" class="menu__item">RULES</a>
-								<a href="about.html" class="menu__item">ABOUT US</a>
-								<a href="antiblock.html" class="menu__item">ANTIBLOCK</a>
-								<a href="contact.html" class="menu__item">CONTACT</a>
-							</div>
-						</div>
-					</div>
-					<div class="menu__right">
-						<button class="search">
-							<img src="img/icons/search.svg" alt="search">
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
+      <div class="menu mobile">
+        <div class="menu__container">
+          <div class="menu__top">
+            <div class="menu__logo">
+              <a href="index.html">
+                <img src="img/icons/logo-mob.svg" alt="" />
+              </a>
+            </div>
+            <div class="header__actions">
+              <div class="header__actions--left">
+                <div class="header__stars">
+                  <img src="img/icons/stars.svg" alt="stars" />
+                  <span>120</span>
+                </div>
+                <div class="divider"></div>
+                <div class="header__wallet">
+                  <img src="img/icons/wallet-header.svg" alt="wallet" />
+                  <span>₽ 49 968</span>
+                </div>
+              </div>
+            </div>
+            <button class="close">
+              <img src="img/icons/close.svg" alt="close" />
+            </button>
+          </div>
+          <div class="menu__list">
+            <a href="index.html" class="menu__item active"> GAME HALL </a>
+            <a href="tournaments.html" class="menu__item"> TOURNAMENT </a>
+            <a href="privileges.html" class="menu__item"> Privileges </a>
+            <a href="top5.html" class="menu__item"> TOP 5 WINNERS </a>
+            <a href="mobile.html" class="menu__item"> MOBILE APP </a>
+            <a href="politics.html" class="menu__item"> RULES </a>
+            <a href="antiblock.html" class="menu__item"> ANTIBLOCK </a>
+            <a href="faq.html" class="menu__item"> FAQ </a>
+            <a href="about.html" class="menu__item"> ABOUT US </a>
+            <a href="contact.html" class="menu__item"> CONTACT </a>
+          </div>
+        </div>
+      </div>
 
-		<div class="menu mobile">
-			<div class="menu__container">
-				<div class="menu__top">
-					<div class="menu__logo">
-						<a href="index.html">
-							<img src="img/icons/logo-mob.svg" alt="">
-						</a>
-					</div>
-					<div class="header__actions">
-						<div class="header__actions--left">
-							<div class="header__stars">
-								<img src="img/icons/stars.svg" alt="stars">
-								<span>120</span>
-							</div>
-							<div class="divider"></div>
-							<div class="header__wallet">
-								<img src="img/icons/wallet-header.svg" alt="wallet">
-								<span>₽ 49 968</span>
-							</div>
-						</div>
-					</div>
-					<button class="close">
-						<img src="img/icons/close.svg" alt="close">
-					</button>
-				</div>
-				<div class="menu__list">
-					<a href="index.html" class="menu__item active">
-						GAME HALL
-					</a>
-					<a href="tournaments.html" class="menu__item">
-						TOURNAMENT
-					</a>
-					<a href="privileges.html" class="menu__item">
-						Privileges
-					</a>
-					<a href="top5.html" class="menu__item">
-						TOP 5 WINNERS
-					</a>
-					<a href="mobile.html" class="menu__item">
-						MOBILE APP
-					</a>
-					<a href="politics.html" class="menu__item">
-						RULES
-					</a>
-					<a href="antiblock.html" class="menu__item">
-						ANTIBLOCK
-					</a>
-					<a href="faq.html" class="menu__item">
-						FAQ
-					</a>
-					<a href="about.html" class="menu__item">
-						ABOUT US
-					</a>
-					<a href="contact.html" class="menu__item">
-						CONTACT
-					</a>
-				</div>
-			</div>
-		</div>
+      <div class="user__content mobile">
+        <div class="user__content--top">
+          <div class="user__content--header">
+            <a href="#" class="user__content--back">
+              <img src="img/icons/back.svg" alt="back" />
+            </a>
+            <div class="user__content--title">Profile</div>
+            <button class="close">
+              <img src="img/icons/close.svg" alt="close" />
+            </button>
+          </div>
+          <div class="user__content--info">
+            <div class="avatar">
+              <img src="img/images/avatar.png" alt="avatar" />
+            </div>
+            <div class="user">Hi, Username!</div>
+            <div class="user__content--skills">
+              <div class="skills__item">
+                Points:
+                <img src="img/icons/stars.svg" alt="stars" />
+                120
+              </div>
+              <div class="skills__item">Balance: ₽ 49 968</div>
+            </div>
+            <div class="user__content--progress">
+              <div class="progressbar"></div>
+              <div class="progress__info">
+                Begginer (0%)
+                <a href="#">More Info</a>
+              </div>
+            </div>
+            <div class="user__content--menu">
+              <button
+                type="button"
+                class="user__content--item"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal3"
+              >
+                <div class="user__content--left">
+                  <div class="user__content--icon">
+                    <img src="img/icons/profile.svg" alt="profile" />
+                  </div>
+                  <div class="user__content--info">
+                    Personal info
+                    <span>Name, email, other information</span>
+                  </div>
+                </div>
+                <div class="user__content--right">
+                  <img src="img/icons/right.svg" alt="right" />
+                </div>
+              </button>
+              <a href="#" class="user__content--item">
+                <div class="user__content--left">
+                  <div class="user__content--icon">
+                    <img src="img/icons/settings.svg" alt="settings" />
+                  </div>
+                  <div class="user__content--info">
+                    Settings
+                    <span>Set up subscriptions and notifications</span>
+                  </div>
+                </div>
+                <div class="user__content--right">
+                  <img src="img/icons/right.svg" alt="right" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="user__content--bottom">
+          <button
+            class="user__content--btn btn btn-secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal4"
+          >
+            Log Out
+          </button>
+        </div>
+      </div>
 
-		<div class="user__content mobile">
-			<div class="user__content--top">
-				<div class="user__content--header">
-					<a href="#" class="user__content--back">
-						<img src="img/icons/back.svg" alt="back">
-					</a>
-					<div class="user__content--title">
-						Profile
-					</div>
-					<button class="close">
-						<img src="img/icons/close.svg" alt="close">
-					</button>
-				</div>
-				<div class="user__content--info">
-					<div class="avatar">
-						<img src="img/images/avatar.png" alt="avatar">
-					</div>
-					<div class="user">
-						Hi, Username!
-					</div>
-					<div class="user__content--skills">
-						<div class="skills__item">
-							Points:
-							<img src="img/icons/stars.svg" alt="stars">
-							120
-						</div>
-						<div class="skills__item">
-							Balance: ₽ 49 968
-						</div>
-					</div>
-					<div class="user__content--progress">
-						<div class="progressbar"></div>
-						<div class="progress__info">
-							Begginer (0%)
-							<a href="#">More Info</a>
-						</div>
-					</div>
-					<div class="user__content--menu">
-						<button type="button" class="user__content--item" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-							<div class="user__content--left">
-								<div class="user__content--icon">
-									<img src="img/icons/profile.svg" alt="profile">
-								</div>
-								<div class="user__content--info">
-									Personal info
-									<span>Name, email, other information</span>
-								</div>
-							</div>
-							<div class="user__content--right">
-								<img src="img/icons/right.svg" alt="right">
-							</div>
-						</button>
-						<a href="#" class="user__content--item">
-							<div class="user__content--left">
-								<div class="user__content--icon">
-									<img src="img/icons/settings.svg" alt="settings">
-								</div>
-								<div class="user__content--info">
-									Settings
-									<span>Set up subscriptions and notifications</span>
-								</div>
-							</div>
-							<div class="user__content--right">
-								<img src="img/icons/right.svg" alt="right">
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="user__content--bottom">
-				<button class="user__content--btn btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
-					Log Out
-				</button>
-			</div>
-		</div>
+      <main class="main">
+        <section class="offer">
+          <div class="offer__slider owl-carousel">
+            <div class="offer__slider--item">
+              <img src="img/images/main-banner-1.png" alt="image" />
+              <div class="offer__slider--text">
+                Weekly cashback up to 30% for casino games
+              </div>
+            </div>
+            <div class="offer__slider--item">
+              <img src="img/images/main-banner-1.png" alt="image" />
+              <div class="offer__slider--text">
+                Weekly cashback up to 30% for casino games
+              </div>
+            </div>
+            <div class="offer__slider--item">
+              <img src="img/images/main-banner-1.png" alt="image" />
+              <div class="offer__slider--text">
+                Weekly cashback up to 30% for casino games
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="games">
+          <div class="games__container">
+            <div class="games__types">
+              <div class="types__list">
+                <button class="types__item btn active">POPULAR</button>
+                <button class="types__item btn">JACKPOT</button>
+                <button class="types__item btn">NEW</button>
+                <button class="types__item btn">SLOTS</button>
+                <button class="types__item btn">Tournaments</button>
+                <button class="types__item btn">TABLE GAMES</button>
+                <button class="types__item btn">FEATURED</button>
+                <button class="types__item btn">ANIME STYLE</button>
+                <button class="types__item btn">777</button>
+                <button class="types__item btn">ALL</button>
+              </div>
+            </div>
+            <div class="games__list">
+              <div class="games__block">
+                <div class="games__list--top">
+                  <p class="games__list--text">Features Games (6)</div>
+                  <a href="#" class="games__list--more"> View All </a>
+                </div>
+                <div class="games__info">
+                  <div class="games__block--list">
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-1.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Bai Shi</div>
+                    </div>
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-2.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Age of Privateers</div>
+                    </div>
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-3.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Super Hot 40</div>
+                    </div>
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-4.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Super Hot 40</div>
+                    </div>
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-5.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Super Hot 40</div>
+                    </div>
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-6.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Super Hot 40</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="games__block">
+                <div class="games__list--top">
+                  <p class="games__list--text">Recommended to you (18)</h3>
+                  <a href="#" class="games__list--more"> View All </a>
+                </div>
+                <div class="games__info">
+                  <div class="games__block--list">
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-7.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Bai Shi</div>
+                    </div>
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-8.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Age of Privateers</div>
+                    </div>
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-9.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Super Hot 40</div>
+                    </div>
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-10.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Super Hot 40</div>
+                    </div>
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-11.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Super Hot 40</div>
+                    </div>
+                    <div class="games__block--item">
+                      <div class="games__block--img">
+                        <img src="img/images/game-12.png" alt="game" />
+                      </div>
+                      <div class="games__block--text">Super Hot 40</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
-		<main class="main">
-			<section class="offer">
-				<div class="offer__slider owl-carousel">
-					<div class="offer__slider--item">
-						<img src="img/images/main-banner-1.png" alt="image">
-						<div class="offer__slider--text">
-							Weekly cashback up to 30% for casino games
-						</div>
-					</div>
-					<div class="offer__slider--item">
-						<img src="img/images/main-banner-1.png" alt="image">
-						<div class="offer__slider--text">
-							Weekly cashback up to 30% for casino games
-						</div>
-					</div>
-					<div class="offer__slider--item">
-						<img src="img/images/main-banner-1.png" alt="image">
-						<div class="offer__slider--text">
-							Weekly cashback up to 30% for casino games
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="games">
-				<div class="games__container">
-					<div class="games__types">
-						<div class="types__list">
-							<button class="types__item btn active">
-								POPULAR
-							</button>
-							<button class="types__item btn">
-								JACKPOT
-							</button>
-							<button class="types__item btn">
-								NEW
-							</button>
-							<button class="types__item btn">
-								SLOTS
-							</button>
-							<button class="types__item btn">
-								Tournaments
-							</button>
-							<button class="types__item btn">
-								TABLE GAMES
-							</button>
-							<button class="types__item btn">
-								FEATURED
-							</button>
-							<button class="types__item btn">
-								ANIME STYLE
-							</button>
-							<button class="types__item btn">
-								777
-							</button>
-							<button class="types__item btn">
-								ALL
-							</button>
-						</div>
-					</div>
-					<div class="games__list">
-						<div class="games__block">
-							<div class="games__list--top">
-								<div class="games__list--text">
-									Features Games (6)
-								</div>
-								<a href="#" class="games__list--more">
-									View All
-								</a>
-							</div>
-							<div class="games__info">
-								<div class="games__block--list">
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-1.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Bai Shi
-										</div>
-									</div>
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-2.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Age of Privateers
-										</div>
-									</div>
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-3.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Super Hot 40
-										</div>
-									</div>
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-4.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Super Hot 40
-										</div>
-									</div>
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-5.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Super Hot 40
-										</div>
-									</div>
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-6.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Super Hot 40
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="games__block">
-							<div class="games__list--top">
-								<div class="games__list--text">
-									Recommended to you (18)
-								</div>
-								<a href="#" class="games__list--more">
-									View All
-								</a>
-							</div>
-							<div class="games__info">
-								<div class="games__block--list">
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-7.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Bai Shi
-										</div>
-									</div>
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-8.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Age of Privateers
-										</div>
-									</div>
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-9.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Super Hot 40
-										</div>
-									</div>
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-10.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Super Hot 40
-										</div>
-									</div>
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-11.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Super Hot 40
-										</div>
-									</div>
-									<div class="games__block--item">
-										<div class="games__block--img">
-											<img src="img/images/game-12.png" alt="game">
-										</div>
-										<div class="games__block--text">
-											Super Hot 40
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__info">
+            <div class="footer__info">
+              <a
+                href="#"
+                onclick="translatePage('ru'); return false;"
+                class="btn btn-translate"
+                >Русский</a
+              >
+              <a
+                href="#"
+                onclick="translatePage('en'); return false;"
+                class="btn btn-translate"
+                >English</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
 
-		<footer class="footer">
-			<div class="footer__container">
-				<div class="footer__info">
-					<div class="footer__info">
-						<a href="#" onclick="translatePage('ru'); return false;" class="btn btn-translate">Русский</a>
-						<a href="#" onclick="translatePage('en'); return false;" class="btn btn-translate">English</a>
-					</div>
-				</div>
-			</div>
-		</footer>
+      <div class="support">
+        <a href="#">
+          <img src="img/icons/message.svg" alt="message" />
+        </a>
+      </div>
 
-		<div class="support">
-			<a href="#">
-				<img src="img/icons/message.svg" alt="message">
-			</a>
-		</div>
+      <div class="mobile-menu">
+        <a href="login.html" class="active">
+          <img src="img/icons/home.svg" alt="home" />
+        </a>
+        <a href="wallet.html">
+          <img src="img/icons/wallet.svg" alt="wallet" />
+        </a>
+        <a href="login.html">
+          <img src="img/icons/support.svg" alt="support" />
+        </a>
+        <a href="login.html">
+          <img src="img/icons/search-mobile.svg" alt="search" />
+        </a>
+      </div>
 
-		<div class="mobile-menu">
-			<a href="login.html" class="active">
-				<img src="img/icons/home.svg" alt="home">
-			</a>
-			<a href="wallet.html">
-				<img src="img/icons/wallet.svg" alt="wallet">
-			</a>
-			<a href="login.html">
-				<img src="img/icons/support.svg" alt="support">
-			</a>
-			<a href="login.html">
-				<img src="img/icons/search-mobile.svg" alt="search">
-			</a>
-		</div>
+      <div class="searching">
+        <div class="searching__container">
+          <div class="searching__input form__input">
+            <input
+              type="text"
+              id="search"
+              name="search"
+              placeholder="Search..."
+            />
+            <button id="clearBtn" class="clear">
+              <img src="img/icons/close.svg" alt="clear" />
+            </button>
+          </div>
+          <div class="searching__results">
+            <div class="searching__results--title">Search Results</div>
+            <div class="searching__results--list">
+              <div class="searching__results--item">
+                <a href="#">
+                  <img src="img/images/image-1.png" alt="image" />
+                  Bai Shi
+                </a>
+              </div>
+              <div class="searching__results--item">
+                <a href="#">
+                  <img src="img/images/image-2.png" alt="image" />
+                  Bai Shi2
+                </a>
+              </div>
+              <div class="searching__results--item">
+                <a href="#">
+                  <img src="img/images/image-3.png" alt="image" />
+                  Bai Shi3
+                </a>
+              </div>
+              <div class="searching__results--item">
+                <a href="#">
+                  <img src="img/images/image-4.png" alt="image" />
+                  Bai Shi4
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="searching__history">
+            <div class="searching__history--title">
+              Search History
+              <button class="clear-history">Clear</button>
+            </div>
+            <div class="searching__history--list">
+              <a href="#">sdaadasdadasdsadas</a>
+              <a href="#">sdasdsadasdadasdsadas</a>
+              <a href="#">sdasdsadasdas</a>
+              <a href="#">sdasdsadasdadasdsadas</a>
+              <a href="#">sdasdasdsadas</a>
+              <a href="#">sdasdsadasdadasdsadas</a>
+              <a href="#">sdasdsadasdadasdsadas</a>
+              <a href="#">sdadasdsadas</a>
+              <a href="#">sdasdsadasdadasdsadas</a>
+              <a href="#">sdasdsadasdadasdsadas</a>
+              <a href="#">sdasdsadasdadasdsadas</a>
+              <a href="#">sdasdsadasdadas</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		<div class="searching">
-			<div class="searching__container">
-				<div class="searching__input form__input">
-					<input type="text" id="search" name="search" placeholder="Search...">
-					<button id="clearBtn" class="clear">
-						<img src="img/icons/close.svg" alt="clear">
-					</button>
-				</div>
-				<div class="searching__results">
-					<div class="searching__results--title">
-						Search Results
-					</div>
-					<div class="searching__results--list">
-						<div class="searching__results--item">
-							<a href="#">
-								<img src="img/images/image-1.png" alt="image">
-								Bai Shi
-							</a>
-						</div>
-						<div class="searching__results--item">
-							<a href="#">
-								<img src="img/images/image-2.png" alt="image">
-								Bai Shi2
-							</a>
-						</div>
-						<div class="searching__results--item">
-							<a href="#">
-								<img src="img/images/image-3.png" alt="image">
-								Bai Shi3
-							</a>
-						</div>
-						<div class="searching__results--item">
-							<a href="#">
-								<img src="img/images/image-4.png" alt="image">
-								Bai Shi4
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="searching__history">
-					<div class="searching__history--title">
-						Search History
-						<button class="clear-history">
-							Clear
-						</button>
-					</div>
-					<div class="searching__history--list">
-						<a href="#">sdaadasdadasdsadas</a>
-						<a href="#">sdasdsadasdadasdsadas</a>
-						<a href="#">sdasdsadasdas</a>
-						<a href="#">sdasdsadasdadasdsadas</a>
-						<a href="#">sdasdasdsadas</a>
-						<a href="#">sdasdsadasdadasdsadas</a>
-						<a href="#">sdasdsadasdadasdsadas</a>
-						<a href="#">sdadasdsadas</a>
-						<a href="#">sdasdsadasdadasdsadas</a>
-						<a href="#">sdasdsadasdadasdsadas</a>
-						<a href="#">sdasdsadasdadasdsadas</a>
-						<a href="#">sdasdsadasdadas</a>
-					</div>
-				</div>
-			</div>
-		</div>
+      <!-- Modal Sign In-->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form uniForm" method="post" id="contact-form">
+                <div class="form__row">
+                  <div class="form__label">Email</div>
+                  <div class="form__input">
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__label">Password</div>
+                  <div class="form__input">
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form__forgot">
+                  <a href="#">Forgot password?</a>
+                </div>
+                <button class="scroll-to btn" type="submit">Log In</button>
+                <div class="form__or">
+                  <span>OR</span>
+                </div>
+                <div class="social">
+                  <a href="https://vk.com/">
+                    <img src="img/images/vk.png" alt="vk" />
+                  </a>
+                  <a href="https://ok.ru/">
+                    <img src="img/images/ok.png" alt="ok" />
+                  </a>
+                  <a href="https://mail.ru/">
+                    <img src="img/images/mail.png" alt="mail" />
+                  </a>
+                  <a href="https://facebook.com/">
+                    <img src="img/images/facebook.png" alt="facebook" />
+                  </a>
+                  <a href="https://google.com/">
+                    <img src="img/images/google.png" alt="google" />
+                  </a>
+                  <button>
+                    <img src="img/icons/down.svg" alt="down" />
+                  </button>
+                </div>
+                <div class="sign__link">
+                  Don’t have any account? <a href="#">Sign Up</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		<!-- Modal Sign In-->
-		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Log In</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-							<img src="img/icons/close.svg" alt="close">
-						</button>
-					</div>
-					<div class="modal-body">
-						<form class="form uniForm" method="post" id="contact-form">
-							<div class="form__row">
-								<div class="form__label">
-									Email
-								</div>
-								<div class="form__input">
-									<input type="email" id="email" name="email" required>
-								</div>
-							</div>
-							<div class="form__row">
-								<div class="form__label">
-									Password
-								</div>
-								<div class="form__input">
-									<input type="password" id="password" name="password" required>
-								</div>
-							</div>
-							<div class="form__forgot">
-								<a href="#">Forgot password?</a>
-							</div>
-							<button class="scroll-to btn" type="submit">
-								Log In
-							</button>
-							<div class="form__or">
-								<span>OR</span>
-							</div>
-							<div class="social">
-								<a href="https://vk.com/">
-									<img src="img/images/vk.png" alt="vk">
-								</a>
-								<a href="https://ok.ru/">
-									<img src="img/images/ok.png" alt="ok">
-								</a>
-								<a href="https://mail.ru/">
-									<img src="img/images/mail.png" alt="mail">
-								</a>
-								<a href="https://facebook.com/">
-									<img src="img/images/facebook.png" alt="facebook">
-								</a>
-								<a href="https://google.com/">
-									<img src="img/images/google.png" alt="google">
-								</a>
-								<button>
-									<img src="img/icons/down.svg" alt="down">
-								</button>
-							</div>
-							<div class="sign__link">
-								Don’t have any account? <a href="#">Sign Up</a>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+      <!-- Modal Sign Up-->
+      <div
+        class="modal fade"
+        id="exampleModal2"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form uniForm" method="post" id="contact-form">
+                <div class="form__row">
+                  <div class="form__label">Email</div>
+                  <div class="form__input">
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__label">Password</div>
+                  <div class="form__input">
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__label">Re-enter Password</div>
+                  <div class="form__input">
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form__checkbox">
+                  <input
+                    type="checkbox"
+                    name="politics"
+                    class="custom-checkbox"
+                    id="politics"
+                    checked
+                  />
+                  <label for="politics">
+                    I agree with <a href="#">Terms & Conditions</a>
+                  </label>
+                </div>
+                <button class="scroll-to btn" type="submit">Sign Up</button>
+                <div class="form__or">
+                  <span>OR</span>
+                </div>
+                <div class="social">
+                  <a href="https://vk.com/">
+                    <img src="img/images/vk.png" alt="vk" />
+                  </a>
+                  <a href="https://ok.ru/">
+                    <img src="img/images/ok.png" alt="ok" />
+                  </a>
+                  <a href="https://mail.ru/">
+                    <img src="img/images/mail.png" alt="mail" />
+                  </a>
+                  <a href="https://facebook.com/">
+                    <img src="img/images/facebook.png" alt="facebook" />
+                  </a>
+                  <a href="https://google.com/">
+                    <img src="img/images/google.png" alt="google" />
+                  </a>
+                  <button>
+                    <img src="img/icons/down.svg" alt="down" />
+                  </button>
+                </div>
+                <div class="sign__link">
+                  Already have account? <a href="#">Sign In</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		<!-- Modal Sign Up-->
-		<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-							<img src="img/icons/close.svg" alt="close">
-						</button>
-					</div>
-					<div class="modal-body">
-						<form class="form uniForm" method="post" id="contact-form">
-							<div class="form__row">
-								<div class="form__label">
-									Email
-								</div>
-								<div class="form__input">
-									<input type="email" id="email" name="email" required>
-								</div>
-							</div>
-							<div class="form__row">
-								<div class="form__label">
-									Password
-								</div>
-								<div class="form__input">
-									<input type="password" id="password" name="password" required>
-								</div>
-							</div>
-							<div class="form__row">
-								<div class="form__label">
-									Re-enter Password
-								</div>
-								<div class="form__input">
-									<input type="password" id="password" name="password" required>
-								</div>
-							</div>
-							<div class="form__checkbox">
-								<input type="checkbox" name="politics" class="custom-checkbox" id="politics" checked>
-								<label for="politics">
-									I agree with <a href="#">Terms & Conditions</a>
-								</label>
-							</div>
-							<button class="scroll-to btn" type="submit">
-								Sign Up
-							</button>
-							<div class="form__or">
-								<span>OR</span>
-							</div>
-							<div class="social">
-								<a href="https://vk.com/">
-									<img src="img/images/vk.png" alt="vk">
-								</a>
-								<a href="https://ok.ru/">
-									<img src="img/images/ok.png" alt="ok">
-								</a>
-								<a href="https://mail.ru/">
-									<img src="img/images/mail.png" alt="mail">
-								</a>
-								<a href="https://facebook.com/">
-									<img src="img/images/facebook.png" alt="facebook">
-								</a>
-								<a href="https://google.com/">
-									<img src="img/images/google.png" alt="google">
-								</a>
-								<button>
-									<img src="img/icons/down.svg" alt="down">
-								</button>
-							</div>
-							<div class="sign__link">
-								Already have account? <a href="#">Sign In</a>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+      <!-- Modal Profile Info-->
+      <div
+        class="modal fade"
+        id="exampleModal3"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Profile Info</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-user__image">
+              <div class="avatar">
+                <img
+                  id="preview"
+                  src="img/images/avatar.png"
+                  alt="Предпросмотр изображения"
+                />
+              </div>
+              <div class="upload-area" id="uploadArea">Tap to change photo</div>
+              <input
+                type="file"
+                id="fileInput"
+                accept="image/*"
+                style="display: none"
+              />
+            </div>
+            <div class="modal-body">
+              <form class="form uniForm" method="post" id="contact-form">
+                <div class="form__row">
+                  <div class="form__label">Username</div>
+                  <div class="form__input">
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      value="Name Sam"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__label">Email</div>
+                  <div class="form__input">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value="email@sample.com"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__label">First Name</div>
+                  <div class="form__input">
+                    <input
+                      type="text"
+                      id="firstname"
+                      name="firstname"
+                      value="One"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__label">Second Name</div>
+                  <div class="form__input">
+                    <input
+                      type="text"
+                      id="secondname"
+                      name="secondname"
+                      value="Seconder"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__label">Birth date</div>
+                  <div class="form__input">
+                    <input
+                      type="text"
+                      id="birthdate"
+                      name="birthdate"
+                      value="Seconder"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="modal__actions">
+                  <button class="scroll-to btn" type="submit">
+                    Save Changes
+                  </button>
+                  <button class="scroll-to btn btn-secondary" type="submit">
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		<!-- Modal Profile Info-->
-		<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Profile Info</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-							<img src="img/icons/close.svg" alt="close">
-						</button>
-					</div>
-					<div class="modal-user__image">
-						<div class="avatar">
-							<img id="preview" src="img/images/avatar.png" alt="Предпросмотр изображения">
-						</div>
-						<div class="upload-area" id="uploadArea">
-							Tap to change photo
-						</div>
-						<input type="file" id="fileInput" accept="image/*" style="display: none;">
-					</div>
-					<div class="modal-body">
-						<form class="form uniForm" method="post" id="contact-form">
-							<div class="form__row">
-								<div class="form__label">
-									Username
-								</div>
-								<div class="form__input">
-									<input type="text" id="username" name="username" value="Name Sam" required>
-								</div>
-							</div>
-							<div class="form__row">
-								<div class="form__label">
-									Email
-								</div>
-								<div class="form__input">
-									<input type="email" id="email" name="email" value="email@sample.com" required>
-								</div>
-							</div>
-							<div class="form__row">
-								<div class="form__label">
-									First Name
-								</div>
-								<div class="form__input">
-									<input type="text" id="firstname" name="firstname" value="One" required>
-								</div>
-							</div>
-							<div class="form__row">
-								<div class="form__label">
-									Second Name
-								</div>
-								<div class="form__input">
-									<input type="text" id="secondname" name="secondname" value="Seconder" required>
-								</div>
-							</div>
-							<div class="form__row">
-								<div class="form__label">
-									Birth date
-								</div>
-								<div class="form__input">
-									<input type="text" id="birthdate" name="birthdate" value="Seconder" required>
-								</div>
-							</div>
-							<div class="modal__actions">
-								<button class="scroll-to btn" type="submit">
-									Save Changes
-								</button>
-								<button class="scroll-to btn btn-secondary" type="submit">
-									Cancel
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+      <!-- Modal LogOut-->
+      <div
+        class="modal logout fade"
+        id="exampleModal4"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content logout">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Are you sure you want to Log Out?
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-body logout">
+              <form class="form uniForm" method="post" id="contact-form">
+                <div class="modal__actions">
+                  <button class="scroll-to btn" type="submit">Confirm</button>
+                  <button
+                    class="scroll-to btn btn-secondary"
+                    type="submit"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		<!-- Modal LogOut-->
-		<div class="modal logout fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content logout">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Are you sure you want to Log Out?</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-							<img src="img/icons/close.svg" alt="close">
-						</button>
-					</div>
-					<div class="modal-body logout">
-						<form class="form uniForm" method="post" id="contact-form">
-							<div class="modal__actions">
-								<button class="scroll-to btn" type="submit">
-									Confirm
-								</button>
-								<button class="scroll-to btn btn-secondary" type="submit" data-bs-dismiss="modal" aria-label="Close">
-									Cancel
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+      <!-- Modal Wallet-->
+      <div
+        class="modal wallet fade"
+        id="exampleModal5"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Wallet</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="wallet">
+                <div class="wallet__balance">
+                  <span>Wallet Balance</span>
+                  ₽ 49 968
+                </div>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="history-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#history"
+                      type="button"
+                      role="tab"
+                      aria-controls="history"
+                      aria-selected="true"
+                    >
+                      History
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="deposit-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#deposit"
+                      type="button"
+                      role="tab"
+                      aria-controls="deposit"
+                      aria-selected="false"
+                    >
+                      Deposit
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="withdrow-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#withdrow"
+                      type="button"
+                      role="tab"
+                      aria-controls="withdrow"
+                      aria-selected="false"
+                    >
+                      Withdrow
+                    </button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="history"
+                    role="tabpanel"
+                    aria-labelledby="history-tab"
+                  >
+                    <div class="payment-history">
+                      <div class="payment-history__top">
+                        <div class="payment-history__title">
+                          Payment History
+                        </div>
+                        <button class="payment-history__clear">
+                          Clear History
+                        </button>
+                      </div>
+                      <div class="payment-history__list">
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Win</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right">
+                            +$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Deposite</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right">
+                            +$200.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Withdrow</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right minus">
+                            -$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Withdrow</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right minus">
+                            -$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Withdrow</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right minus">
+                            -$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Withdrow</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right minus">
+                            -$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="payment-history__item">
+                          <div class="payment-history__item--left">
+                            <span>Withdrow</span>
+                            Sept 20, 2024
+                          </div>
+                          <div class="payment-history__item--right minus">
+                            -$6,500.00
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="deposit"
+                    role="tabpanel"
+                    aria-labelledby="deposit-tab"
+                  >
+                    <div class="banner">
+                      <div class="banner__left">
+                        <div class="banner__title">
+                          Exchange Your Extra Points
+                        </div>
+                        <a href="#" class="banner__start">
+                          Start to Explore
+                          <img src="img/icons/right.svg" alt="right" />
+                        </a>
+                      </div>
+                      <div class="banner__right">
+                        <div class="banner__close">
+                          <img src="img/icons/close.svg" alt="close" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="money">
+                      <div class="money__top">
+                        <div class="types__list">
+                          <button class="types__item btn active">RUB</button>
+                          <button class="types__item btn">USDT</button>
+                          <button class="types__item btn">
+                            ALL CRYPTOCURRENCY
+                          </button>
+                          <button class="types__item btn">CREDIT CARD</button>
+                          <button class="types__item btn">CREDIT CARD</button>
+                        </div>
+                      </div>
+                      <div class="money__list">
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            RUB
+                            <img src="img/images/card.png" alt="card" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            RUB#2
+                            <img src="img/images/sbp.png" alt="sbp" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            Bitcoin
+                            <img src="img/images/bitcoin.png" alt="bitcoin" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            TRON
+                            <img src="img/images/tron.png" alt="tron" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            Etherium
+                            <img src="img/images/etherium.png" alt="etherium" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">
+                            USDT TRC20
+                            <img src="img/images/thether.png" alt="thether" />
+                          </div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="withdrow"
+                    role="tabpanel"
+                    aria-labelledby="withdrow-tab"
+                  >
+                    <div class="banner banner-withdrow">
+                      <div class="banner__left">
+                        <div class="banner__title">
+                          Exchange Your Extra Points
+                        </div>
+                        <a href="#" class="banner__start">
+                          Start to Explore
+                          <img src="img/icons/right.svg" alt="right" />
+                        </a>
+                      </div>
+                      <div class="banner__right">
+                        <div class="banner__close">
+                          <img src="img/icons/close.svg" alt="close" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="money">
+                      <div class="money__top">
+                        <div class="types__list">
+                          <button class="types__item btn active">
+                            CREDIT CARD
+                          </button>
+                          <button class="types__item btn">USDT</button>
+                          <button class="types__item btn">BANK ACCOUNT</button>
+                          <button class="types__item btn">
+                            ALL CRYPTOCURRENCY
+                          </button>
+                        </div>
+                      </div>
+                      <div class="money__list">
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">VISA</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">Mastercard</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">MIR</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">SBERBANK</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">ALFA-BANK</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                        <a href="#" class="money__item">
+                          <div class="money__item--left">VTB</div>
+                          <div class="money__item--right">
+                            <img src="img/icons/right.svg" alt="right" />
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		<!-- Modal Wallet-->
-		<div class="modal wallet fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Wallet</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-							<img src="img/icons/close.svg" alt="close">
-						</button>
-					</div>
-					<div class="modal-body">
-						<div class="wallet">
-							<div class="wallet__balance">
-								<span>Wallet Balance</span>
-								₽ 49 968
-							</div>
-							<ul class="nav nav-tabs" id="myTab" role="tablist">
-								<li class="nav-item" role="presentation">
-									<button class="nav-link active" id="history-tab" data-bs-toggle="tab" data-bs-target="#history"
-										type="button" role="tab" aria-controls="history" aria-selected="true">History</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="deposit-tab" data-bs-toggle="tab" data-bs-target="#deposit" type="button"
-										role="tab" aria-controls="deposit" aria-selected="false">Deposit</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="withdrow-tab" data-bs-toggle="tab" data-bs-target="#withdrow"
-										type="button" role="tab" aria-controls="withdrow" aria-selected="false">Withdrow</button>
-								</li>
-							</ul>
-							<div class="tab-content" id="myTabContent">
-								<div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
-									<div class="payment-history">
-										<div class="payment-history__top">
-											<div class="payment-history__title">Payment History</div>
-											<button class="payment-history__clear">Clear History</button>
-										</div>
-										<div class="payment-history__list">
-											<a href="#" class="payment-history__item">
-												<div class="payment-history__item--left">
-													<span>Win</span>
-													Sept 20, 2024
-												</div>
-												<div class="payment-history__item--right">
-													+$6,500.00
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="payment-history__item">
-												<div class="payment-history__item--left">
-													<span>Deposite</span>
-													Sept 20, 2024
-												</div>
-												<div class="payment-history__item--right">
-													+$200.00
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="payment-history__item">
-												<div class="payment-history__item--left">
-													<span>Withdrow</span>
-													Sept 20, 2024
-												</div>
-												<div class="payment-history__item--right minus">
-													-$6,500.00
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="payment-history__item">
-												<div class="payment-history__item--left">
-													<span>Withdrow</span>
-													Sept 20, 2024
-												</div>
-												<div class="payment-history__item--right minus">
-													-$6,500.00
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="payment-history__item">
-												<div class="payment-history__item--left">
-													<span>Withdrow</span>
-													Sept 20, 2024
-												</div>
-												<div class="payment-history__item--right minus">
-													-$6,500.00
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="payment-history__item">
-												<div class="payment-history__item--left">
-													<span>Withdrow</span>
-													Sept 20, 2024
-												</div>
-												<div class="payment-history__item--right minus">
-													-$6,500.00
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="payment-history__item">
-												<div class="payment-history__item--left">
-													<span>Withdrow</span>
-													Sept 20, 2024
-												</div>
-												<div class="payment-history__item--right minus">
-													-$6,500.00
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane fade" id="deposit" role="tabpanel" aria-labelledby="deposit-tab">
-									<div class="banner">
-										<div class="banner__left">
-											<div class="banner__title">
-												Exchange Your Extra Points
-											</div>
-											<a href="#" class="banner__start">
-												Start to Explore
-												<img src="img/icons/right.svg" alt="right">
-											</a>
-										</div>
-										<div class="banner__right">
-											<div class="banner__close">
-												<img src="img/icons/close.svg" alt="close">
-											</div>
-										</div>
-									</div>
-									<div class="money">
-										<div class="money__top">
-											<div class="types__list">
-												<button class="types__item btn active">
-													RUB
-												</button>
-												<button class="types__item btn">
-													USDT
-												</button>
-												<button class="types__item btn">
-													ALL CRYPTOCURRENCY
-												</button>
-												<button class="types__item btn">
-													CREDIT CARD
-												</button>
-												<button class="types__item btn">
-													CREDIT CARD
-												</button>
-											</div>
-										</div>
-										<div class="money__list">
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													RUB
-													<img src="img/images/card.png" alt="card">
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													RUB#2
-													<img src="img/images/sbp.png" alt="sbp">
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													Bitcoin
-													<img src="img/images/bitcoin.png" alt="bitcoin">
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													TRON
-													<img src="img/images/tron.png" alt="tron">
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													Etherium
-													<img src="img/images/etherium.png" alt="etherium">
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													USDT TRC20
-													<img src="img/images/thether.png" alt="thether">
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane fade" id="withdrow" role="tabpanel" aria-labelledby="withdrow-tab">
-									<div class="banner banner-withdrow">
-										<div class="banner__left">
-											<div class="banner__title">
-												Exchange Your Extra Points
-											</div>
-											<a href="#" class="banner__start">
-												Start to Explore
-												<img src="img/icons/right.svg" alt="right">
-											</a>
-										</div>
-										<div class="banner__right">
-											<div class="banner__close">
-												<img src="img/icons/close.svg" alt="close">
-											</div>
-										</div>
-									</div>
-									<div class="money">
-										<div class="money__top">
-											<div class="types__list">
-												<button class="types__item btn active">
-													CREDIT CARD
-												</button>
-												<button class="types__item btn">
-													USDT
-												</button>
-												<button class="types__item btn">
-													BANK ACCOUNT
-												</button>
-												<button class="types__item btn">
-													ALL CRYPTOCURRENCY
-												</button>
-											</div>
-										</div>
-										<div class="money__list">
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													VISA
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													Mastercard
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													MIR
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													SBERBANK
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													ALFA-BANK
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-											<a href="#" class="money__item">
-												<div class="money__item--left">
-													VTB
-												</div>
-												<div class="money__item--right">
-													<img src="img/icons/right.svg" alt="right">
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+      <!-- Modal Deposit-->
+      <div
+        class="modal pay fade"
+        id="exampleModal6"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                class="modal-header__back"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/back.svg" alt="back" />
+              </button>
+              <h5 class="modal-title" id="exampleModalLabel">Deposit</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form uniForm" method="post" id="contact-form">
+                <div class="pay">
+                  <div class="pay__logo">
+                    <img src="img/images/thether-2.png" alt="thether" />
+                  </div>
+                  <div class="form__row">
+                    <div class="form__label">Deposite</div>
+                    <div class="form__input">
+                      <input
+                        type="text"
+                        id="deposite"
+                        name="deposite"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="types__list">
+                    <button class="types__item btn active">1000</button>
+                    <button class="types__item btn">2000</button>
+                    <button class="types__item btn">5000</button>
+                    <button class="types__item btn">10 000</button>
+                    <button class="types__item btn">20 000</button>
+                    <button class="types__item btn">50 000</button>
+                    <button class="types__item btn">100 000</button>
+                  </div>
+                </div>
+                <div class="secure">
+                  <span>Secure payment by:</span>
+                  <div class="secure__list">
+                    <a href="#">
+                      <img src="img/images/pay-1.png" alt="pay" />
+                    </a>
+                    <a href="#">
+                      <img src="img/images/pay-2.png" alt="pay" />
+                    </a>
+                  </div>
+                </div>
+                <div class="modal__actions">
+                  <button class="scroll-to btn" type="submit">
+                    Pay 2,500₽
+                  </button>
+                  <button
+                    class="scroll-to btn btn-secondary"
+                    type="submit"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		<!-- Modal Deposit-->
-		<div class="modal pay fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button class="modal-header__back" data-bs-dismiss="modal" aria-label="Close">
-							<img src="img/icons/back.svg" alt="back">
-						</button>
-						<h5 class="modal-title" id="exampleModalLabel">Deposit</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-							<img src="img/icons/close.svg" alt="close">
-						</button>
-					</div>
-					<div class="modal-body">
-						<form class="form uniForm" method="post" id="contact-form">
-							<div class="pay">
-								<div class="pay__logo">
-									<img src="img/images/thether-2.png" alt="thether">
-								</div>
-								<div class="form__row">
-									<div class="form__label">
-										Deposite
-									</div>
-									<div class="form__input">
-										<input type="text" id="deposite" name="deposite" required>
-									</div>
-								</div>
-								<div class="types__list">
-									<button class="types__item btn active">
-										1000
-									</button>
-									<button class="types__item btn">
-										2000
-									</button>
-									<button class="types__item btn">
-										5000
-									</button>
-									<button class="types__item btn">
-										10 000
-									</button>
-									<button class="types__item btn">
-										20 000
-									</button>
-									<button class="types__item btn">
-										50 000
-									</button>
-									<button class="types__item btn">
-										100 000
-									</button>
-								</div>
-							</div>
-							<div class="secure">
-								<span>Secure payment by:</span>
-								<div class="secure__list">
-									<a href="#">
-										<img src="img/images/pay-1.png" alt="pay">
-									</a>
-									<a href="#">
-										<img src="img/images/pay-2.png" alt="pay">
-									</a>
-								</div>
-							</div>
-							<div class="modal__actions">
-								<button class="scroll-to btn" type="submit">
-									Pay 2,500₽
-								</button>
-								<button class="scroll-to btn btn-secondary" type="submit" data-bs-dismiss="modal" aria-label="Close">
-									Cancel
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+      <!-- Modal Exchange-->
+      <div
+        class="modal exchange fade"
+        id="exampleModal7"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                class="modal-header__back"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/back.svg" alt="back" />
+              </button>
+              <h5 class="modal-title" id="exampleModalLabel">Exchange</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="img/icons/close.svg" alt="close" />
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="exchange__content">
+                <div class="exchange__title">Exchange Points</div>
+                <div class="exchange__number">
+                  <img src="img/icons/stars.svg" alt="stars" />
+                  120
+                </div>
+                <div class="exchange__desc">
+                  Each new level unlocks even more opportunities to enjoy
+                  exclusive bonuses and perks
+                </div>
+                <div class="exchange__list">
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Begginer (100%)</div>
+                        <div class="exchange__item--deposit">
+                          No Deposit 8:1
+                        </div>
+                      </div>
+                      <div class="progressbar"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-2.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Novice (25%)</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-3.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Novice</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-4.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Specialist</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
+                  </div>
+                  <div class="exchange__item">
+                    <div class="exchange__item--left">
+                      <div class="exchange__avatar avatar">
+                        <img src="img/images/avatar-5.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div class="exchange__item--right">
+                      <div class="exchange__item--top">
+                        <div class="exchange__item--type">Specialist</div>
+                        <div class="exchange__item--deposit">
+                          Deposit/Points 2999/100
+                        </div>
+                      </div>
+                      <div class="progressbar w25"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<!-- Modal Exchange-->
-		<div class="modal exchange fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button class="modal-header__back" data-bs-dismiss="modal" aria-label="Close">
-							<img src="img/icons/back.svg" alt="back">
-						</button>
-						<h5 class="modal-title" id="exampleModalLabel">Exchange</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-							<img src="img/icons/close.svg" alt="close">
-						</button>
-					</div>
-					<div class="modal-body">
-						<div class="exchange__content">
-							<div class="exchange__title">
-								Exchange Points
-							</div>
-							<div class="exchange__number">
-								<img src="img/icons/stars.svg" alt="stars">
-								120
-							</div>
-							<div class="exchange__desc">
-								Each new level unlocks even more opportunities to enjoy exclusive bonuses and perks
-							</div>
-							<div class="exchange__list">
-								<div class="exchange__item">
-									<div class="exchange__item--left">
-										<div class="exchange__avatar avatar">
-											<img src="img/images/avatar.png" alt="avatar">
-										</div>
-									</div>
-									<div class="exchange__item--right">
-										<div class="exchange__item--top">
-											<div class="exchange__item--type">
-												Begginer (100%)
-											</div>
-											<div class="exchange__item--deposit">
-												No Deposit 8:1
-											</div>
-										</div>
-										<div class="progressbar"></div>
-									</div>
-								</div>
-								<div class="exchange__item">
-									<div class="exchange__item--left">
-										<div class="exchange__avatar avatar">
-											<img src="img/images/avatar-2.png" alt="avatar">
-										</div>
-									</div>
-									<div class="exchange__item--right">
-										<div class="exchange__item--top">
-											<div class="exchange__item--type">
-												Novice (25%)
-											</div>
-											<div class="exchange__item--deposit">
-												Deposit/Points 2999/100
-											</div>
-										</div>
-										<div class="progressbar w25"></div>
-									</div>
-								</div>
-								<div class="exchange__item">
-									<div class="exchange__item--left">
-										<div class="exchange__avatar avatar">
-											<img src="img/images/avatar-3.png" alt="avatar">
-										</div>
-									</div>
-									<div class="exchange__item--right">
-										<div class="exchange__item--top">
-											<div class="exchange__item--type">
-												Novice
-											</div>
-											<div class="exchange__item--deposit">
-												Deposit/Points 2999/100
-											</div>
-										</div>
-										<div class="progressbar w25"></div>
-									</div>
-								</div>
-								<div class="exchange__item">
-									<div class="exchange__item--left">
-										<div class="exchange__avatar avatar">
-											<img src="img/images/avatar-4.png" alt="avatar">
-										</div>
-									</div>
-									<div class="exchange__item--right">
-										<div class="exchange__item--top">
-											<div class="exchange__item--type">
-												Specialist
-											</div>
-											<div class="exchange__item--deposit">
-												Deposit/Points 2999/100
-											</div>
-										</div>
-										<div class="progressbar w25"></div>
-									</div>
-								</div>
-								<div class="exchange__item">
-									<div class="exchange__item--left">
-										<div class="exchange__avatar avatar">
-											<img src="img/images/avatar-5.png" alt="avatar">
-										</div>
-									</div>
-									<div class="exchange__item--right">
-										<div class="exchange__item--top">
-											<div class="exchange__item--type">
-												Specialist
-											</div>
-											<div class="exchange__item--deposit">
-												Deposit/Points 2999/100
-											</div>
-										</div>
-										<div class="progressbar w25"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
 
-	<script src="js/jquery-3.1.1.min.js"></script>
-	<script src="owlcarousel/owl.carousel.min.js"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-		crossorigin="anonymous"></script>
-
-	<script type="text/javascript"
-		src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-	<div id="google_translate_element" style="display:none;"></div>
-	<script type="text/javascript">
-		function googleTranslateElementInit() {
-			new google.translate.TranslateElement({
-				pageLanguage: 'ru', // Default language of your page
-				includedLanguages: 'en,ru', // Languages you want to include
-				layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-			}, 'google_translate_element');
-		}
-	</script>
-	<script src="js/script.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>

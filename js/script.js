@@ -216,16 +216,72 @@ listItems.forEach((item) => {
   });
 });
 
-function translatePage(language) {
-  setTimeout(function () {
-    var googleTranslate = document.querySelector(".goog-te-combo");
-    if (googleTranslate) {
-      googleTranslate.value = language;
-      googleTranslate.dispatchEvent(new Event("change"));
-    } else {
-      console.error("Google Translate element not found.");
+const persistBtns = () => {
+  const savedLang = localStorage.getItem("selectedLanguage");
+  $("#translate-ru").removeClass("btn-primary");
+  $("#translate-en").removeClass("btn-primary");
+  $("#translate-ru").removeClass("btn-secondary");
+  $("#translate-en").removeClass("btn-secondary");
+  if (savedLang === "ru") {
+    $("#translate-ru").addClass("btn-primary");
+    $("#translate-en").addClass("btn-secondary");
+  } else if (savedLang === "en") {
+    $("#translate-en").addClass("btn-primary");
+    $("#translate-ru").addClass("btn-secondary");
+  }
+};
+
+function translatePage(lang) {
+  const elements = document.querySelectorAll(
+    "p, h1, h2, h3, h4, h5, h6, span, a, button, label"
+  );
+
+  // Сохраняем выбранный язык
+  localStorage.setItem("selectedLanguage", lang);
+
+  elements.forEach((element) => {
+    if (element.textContent.trim()) {
+      const text = element.textContent;
+      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${lang}&dt=t&q=${encodeURIComponent(
+        text
+      )}`;
+
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data && data[0] && data[0][0] && data[0][0][0]) {
+            element.textContent = data[0][0][0];
+          }
+          persistBtns();
+        })
+        .catch((error) => console.error("Translation error:", error));
     }
-  }, 500); // Delay to ensure the widget is initialized
+  });
 }
+
+// Применяем сохраненный язык при загрузке страницы
+$(document).ready(function () {
+  const savedLang = localStorage.getItem("selectedLanguage");
+  if (savedLang) {
+    translatePage(savedLang);
+  }
+  persistBtns();
+});
+
+$("#translate-ru").click(function (e) {
+  e.preventDefault();
+  translatePage("ru");
+});
+
+$("#translate-en").click(function (e) {
+  e.preventDefault();
+  translatePage("en");
+});
+
+// Добавляем скрипт Google Translate
+const script = document.createElement("script");
+script.src =
+  "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+document.body.appendChild(script);
 
 checkLogin();
