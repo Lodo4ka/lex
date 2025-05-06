@@ -1,160 +1,231 @@
-$(document).ready(function() {
+const createUserData = (data) => {
+  const formData = new FormData(data);
+  const email = formData.get("email");
+  const password = formData.get("password");
 
-    //E-mail Ajax Send
-    $("form").submit(function() { //Change
-      var th = $(this);
-      const data = th.serialize();
-      localStorage.setItem('data', data);
-      swal("Отлично!", "Ваша заявка успешно принята!", "success");
-      setTimeout(function() {
-        th.trigger("reset");
-      }, 1000);
-      // $.ajax({
-      //   type: "POST",
-      //   url: "/mail.php", //Change
-      //   data: th.serialize()
-      // }).done(function() {
-      //   swal("Отлично!", "Ваша заявка успешно принята!", "success");
-      //   setTimeout(function() {
-      //     // Done Functions
-      //     th.trigger("reset");
-      //   }, 1000);
-      // });
-      return false;
-    });
+  return {
+    email: email,
+    password: password,
+  };
+};
 
-    $('.offer__slider').owlCarousel({
-      center: true,
-      items:1,
-      loop:true,
-      margin:16,
-      dots:true,
-      responsive:{
-          600:{
-              items:2
-          }
-      }
-    });
+const saveEmailPassword = (data) => {
+  const userData = createUserData(data);
 
-    // $('.types__item').on('click', function() {
-    //   // Удаляем активный класс у всех дочерних элементов
-    //   $('.types__item').removeClass('active');
+  localStorage.setItem("userData", JSON.stringify(userData));
+};
 
-    //   // Добавляем активный класс только к дочернему элементу текущего элемента списка
-    //   $(this).find('.types__item').toggleClass('active');
-    // });
+const isEqualEmailPassword = (currentUserData) => {
+  const userData = localStorage.getItem("userData");
+  return userData === JSON.stringify(currentUserData);
+};
 
-    $(".btn.mobile").on( "click", function() {
-      $(".menu.mobile").addClass("show");
-    });
+const goToLogin = () => {
+  window.location.href = "login.html";
+};
 
-    $("button.close").on( "click", function() {
-      $(".menu.mobile").removeClass("show");
-    });
+const goToHome = () => {
+  window.location.href = "/index.html";
+};
 
-    $(".menu.mobile .header__actions--left").on( "click", function() {
-      $(".user__content.mobile").toggleClass("show");
-    });
+const setLogin = () => {
+  localStorage.setItem("isLogin", true);
+};
 
-    $(".user__content--back").on( "click", function() {
-      $(".user__content.mobile").toggleClass("show");
-    });
+const setLogout = () => {
+  localStorage.removeItem("isLogin");
+};
 
-    $(".user__content .close").on( "click", function() {
-      $(".user__content.mobile").toggleClass("show");
-    });
+const checkLogin = () => {
+  const isLogin = localStorage.getItem("isLogin");
+  if (isLogin && window.location.pathname === "/index.html") {
+    goToLogin();
+  }
+};
 
-    $('#clearBtn').click(function() {
-      $('#search').val(''); // Очищаем поле ввода
-    });
-
-    $(".search").on( "click", function() {
-      $("body").toggleClass("show-search");
-      $(".searching").toggleClass("show");
-    });
-
-    $("#clearBtn").on( "click", function() {
-      $("body").toggleClass("show-search");
-      $(".searching").toggleClass("show");
-    });
-
-    $('.banner__close').click(function() {
-      $('.banner').hide();
+$(document).ready(function () {
+  //E-mail Ajax Send
+  $(".signupForm").submit(function (e) {
+    e.preventDefault();
+    const th = $(this);
+    //Change
+    saveEmailPassword(this);
+    swal("Отлично!", "Ваша заявка успешно принята!", "success");
+    setTimeout(function () {
+      th.trigger("reset");
+      setLogin();
+      goToLogin();
+    }, 1000);
   });
 
+  $(".offer__slider").owlCarousel({
+    center: true,
+    items: 1,
+    loop: true,
+    margin: 16,
+    dots: true,
+    responsive: {
+      600: {
+        items: 2,
+      },
+    },
   });
 
-$(document).ready(function() {
-    $('.menu__drop').click(function() {
-        $('.dropdown-menu').toggle();
-    });
+  // $('.types__item').on('click', function() {
+  //   // Удаляем активный класс у всех дочерних элементов
+  //   $('.types__item').removeClass('active');
 
-    $(document).click(function(event) {
-        var target = $(event.target);
+  //   // Добавляем активный класс только к дочернему элементу текущего элемента списка
+  //   $(this).find('.types__item').toggleClass('active');
+  // });
 
-        // Проверяем, был ли клик вне блока и вне кнопки
-        if (!target.closest('.dropdown-menu').length && !target.closest('.menu__drop').length) {
-            $('.dropdown-menu').hide(); // Скрываем блок, если клик был вне
-        }
-    });
+  $(".btn.mobile").on("click", function () {
+    $(".menu.mobile").addClass("show");
+  });
+
+  $("button.close").on("click", function () {
+    $(".menu.mobile").removeClass("show");
+  });
+
+  $(".menu.mobile .header__actions--left").on("click", function () {
+    $(".user__content.mobile").toggleClass("show");
+  });
+
+  $(".user__content--back").on("click", function () {
+    $(".user__content.mobile").toggleClass("show");
+  });
+
+  $(".user__content .close").on("click", function () {
+    $(".user__content.mobile").toggleClass("show");
+  });
+
+  $("#clearBtn").click(function () {
+    $("#search").val(""); // Очищаем поле ввода
+  });
+
+  $(".search").on("click", function () {
+    $("body").toggleClass("show-search");
+    $(".searching").toggleClass("show");
+  });
+
+  $("#clearBtn").on("click", function () {
+    $("body").toggleClass("show-search");
+    $(".searching").toggleClass("show");
+  });
+
+  $(".banner__close").click(function () {
+    $(".banner").hide();
+  });
 });
 
-$(document).ready(function() {
-    $('.header__main--user').click(function() {
-        $('.user__content.desktop').toggle();
-    });
-
-    $(document).click(function(event) {
-        var target = $(event.target);
-
-        // Проверяем, был ли клик вне блока и вне кнопки
-        if (!target.closest('.user__content').length && !target.closest('.header__main--user').length) {
-            $('.user__content').hide(); // Скрываем блок, если клик был вне
-        }
-    });
-});
-
-$(document).ready(function() {
-  $('#uploadArea').click(function() {
-      $('#fileInput').click(); // Открываем диалог выбора файла
+$(document).ready(function () {
+  $(".menu__drop").click(function () {
+    $(".dropdown-menu").toggle();
   });
 
-  $('#fileInput').change(function(event) {
-      var file = event.target.files[0];
-      if (file) {
-          var reader = new FileReader();
+  $(document).click(function (event) {
+    var target = $(event.target);
 
-          reader.onload = function(e) {
-              $('#preview').attr('src', e.target.result).show(); // Устанавливаем источник изображения
-          };
+    // Проверяем, был ли клик вне блока и вне кнопки
+    if (
+      !target.closest(".dropdown-menu").length &&
+      !target.closest(".menu__drop").length
+    ) {
+      $(".dropdown-menu").hide(); // Скрываем блок, если клик был вне
+    }
+  });
+});
 
-          reader.readAsDataURL(file); // Читаем файл как Data URL
-      }
+$(document).ready(function () {
+  $(".loginForm").submit(function (e) {
+    e.preventDefault();
+
+    const userData = createUserData(this);
+
+    if (isEqualEmailPassword(userData)) {
+      $(".user__content").hide();
+      setLogin();
+      goToLogin();
+    }
+  });
+
+  $(".loginBtn").click(function (e) {
+    e.preventDefault();
+    $(".loginForm").submit();
+  });
+});
+
+$(document).ready(() => {
+  $(".logout form").submit(function (e) {
+    e.preventDefault();
+    setLogout();
+    goToHome();
+  });
+});
+
+$(document).ready(function () {
+  $(".header__main--user").click(function () {
+    $(".user__content.desktop").toggle();
+  });
+
+  $(document).click(function (event) {
+    const target = $(event.target);
+
+    if (target.hasClass("loginBtn")) return false;
+
+    // Проверяем, был ли клик вне блока и вне кнопки, исключая форму signin
+    if (
+      !target.closest(".user__content").length &&
+      !target.closest(".header__main--user").length
+    ) {
+      $(".user__content").hide(); // Скрываем блок, если клик был вне
+    }
+  });
+});
+
+$(document).ready(function () {
+  $("#uploadArea").click(function () {
+    $("#fileInput").click(); // Открываем диалог выбора файла
+  });
+
+  $("#fileInput").change(function (event) {
+    var file = event.target.files[0];
+    if (file) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $("#preview").attr("src", e.target.result).show(); // Устанавливаем источник изображения
+      };
+
+      reader.readAsDataURL(file); // Читаем файл как Data URL
+    }
   });
 });
 
 // Получаем список всех элементов
-const listItems = document.querySelectorAll('.types__list .types__item');
+const listItems = document.querySelectorAll(".types__list .types__item");
 
 // Добавляем обработчик события клика для каждого элемента списка
-listItems.forEach(item => {
-    item.addEventListener('click', function() {
-        // Убираем класс active у всех элементов
-        listItems.forEach(i => i.classList.remove('active'));
+listItems.forEach((item) => {
+  item.addEventListener("click", function () {
+    // Убираем класс active у всех элементов
+    listItems.forEach((i) => i.classList.remove("active"));
 
-        // Добавляем класс active к текущему элементу
-        this.classList.add('active');
-    });
+    // Добавляем класс active к текущему элементу
+    this.classList.add("active");
+  });
 });
 
 function translatePage(language) {
   setTimeout(function () {
-    var googleTranslate = document.querySelector('.goog-te-combo');
+    var googleTranslate = document.querySelector(".goog-te-combo");
     if (googleTranslate) {
       googleTranslate.value = language;
-      googleTranslate.dispatchEvent(new Event('change'));
+      googleTranslate.dispatchEvent(new Event("change"));
     } else {
-      console.error('Google Translate element not found.');
+      console.error("Google Translate element not found.");
     }
   }, 500); // Delay to ensure the widget is initialized
 }
+
+checkLogin();
