@@ -218,10 +218,7 @@ listItems.forEach((item) => {
 
 const persistBtns = () => {
   const savedLang = localStorage.getItem("selectedLanguage");
-  $("#translate-ru").removeClass("btn-primary");
-  $("#translate-en").removeClass("btn-primary");
-  $("#translate-ru").removeClass("btn-secondary");
-  $("#translate-en").removeClass("btn-secondary");
+  $("#translate-ru, #translate-en").removeClass("btn-primary btn-secondary");
   if (savedLang === "ru") {
     $("#translate-ru").addClass("btn-primary");
     $("#translate-en").addClass("btn-secondary");
@@ -231,80 +228,77 @@ const persistBtns = () => {
   }
 };
 
-function translatePage(lang) {
-  // Показываем индикатор загрузки
+function showLoader() {
   $("body").append(
-    '<div id="translation-loader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.9); z-index: 9999; display: flex; justify-content: center; align-items: center;"><div>Перевод...</div></div>'
+    `<div id="translation-loader" style="
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+      font-family: sans-serif;">
+    </div>`
   );
-
-  // Скрываем основной контент
-  $("body > *:not(#translation-loader)").hide();
-
-  const elements = Array.from(
-    document.querySelectorAll(
-      "p, h1, h2, h3, h4, h5, h6, span, a, button, label"
-    )
-  );
-
-  localStorage.setItem("selectedLanguage", lang);
-
-  const promises = elements.map((element) => {
-    if (element.textContent.trim()) {
-      const text = element.textContent;
-      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${lang}&dt=t&q=${encodeURIComponent(
-        text
-      )}`;
-
-      return fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data && data[0] && data[0][0] && data[0][0][0]) {
-            element.textContent = data[0][0][0];
-          }
-        });
-    }
-    return Promise.resolve();
-  });
-
-  // Ждем завершения всех переводов
-  Promise.all(promises)
-    .then(() => {
-      // Скрываем индикатор загрузки
-      $("#translation-loader").remove();
-      // Показываем контент
-      $("body > *:not(#translation-loader)").show();
-      persistBtns();
-    })
-    .catch((error) => {
-      console.error("Translation error:", error);
-      $("#translation-loader").remove();
-      $("body > *:not(#translation-loader)").show();
-    });
 }
 
-// Применяем сохраненный язык при загрузке страницы
+function hideLoader() {
+  $("#translation-loader").remove();
+}
+
+function setLanguage(lang) {
+  showLoader();
+
+  const baseLang = "en"; // язык по умолчанию
+  document.cookie = `googtrans=/${baseLang}/${lang}; path=/`;
+  document.cookie = `googtrans=/${baseLang}/${lang}; domain=.${location.hostname}; path=/`;
+  localStorage.setItem("selectedLanguage", lang);
+
+  // Небольшая задержка для отображения лоадера
+  setTimeout(() => {
+    location.reload();
+  }, 300);
+}
+
 $(document).ready(function () {
   const savedLang = localStorage.getItem("selectedLanguage");
   if (savedLang) {
-    translatePage(savedLang);
+    const baseLang = "en";
+    document.cookie = `googtrans=/${baseLang}/${savedLang}; path=/`;
+    document.cookie = `googtrans=/${baseLang}/${savedLang}; domain=.${location.hostname}; path=/`;
   }
+
   persistBtns();
+  hideLoader(); // на всякий случай
+
+  $("#translate-ru").click(function (e) {
+    e.preventDefault();
+    setLanguage("ru");
+  });
+
+  $("#translate-en").click(function (e) {
+    e.preventDefault();
+    setLanguage("en");
+  });
 });
 
-$("#translate-ru").click(function (e) {
-  e.preventDefault();
-  translatePage("ru");
-});
+// Google Translate widget init
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: "en",
+      includedLanguages: "en,ru",
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    },
+    "google_translate_element"
+  );
+}
 
-$("#translate-en").click(function (e) {
-  e.preventDefault();
-  translatePage("en");
-});
-
-// Добавляем скрипт Google Translate
 const script = document.createElement("script");
 script.src =
   "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
 document.body.appendChild(script);
-
 checkLogin();
